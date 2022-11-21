@@ -49,7 +49,7 @@ function DetailPage() {
         `https://ironrest.herokuapp.com/91chamadosti/${userID}`
       );
       navigate("/");
-      toast.success("Funcionário deletado com sucesso!");
+      toast.success("Chamado deletado com sucesso!");
     } catch (error) {
       console.log(error);
       toast.error("Algo deu errado. Tente Novamente!");
