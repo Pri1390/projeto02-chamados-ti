@@ -27,7 +27,7 @@ function DetailPage() {
     async function fetchUser() {
       try {
         const response = await axios.get(
-          `https://ironrest.herokuapp.com/91chamadosti/${userID}`
+          `https://ironrest.cyclic.app/chamadosti-projeto02/${userID}`
         );
         setUsers(response.data);
         setForm(response.data);
@@ -46,7 +46,7 @@ function DetailPage() {
   async function handleDelete(e) {
     try {
       await axios.delete(
-        `https://ironrest.herokuapp.com/91chamadosti/${userID}`
+        `https://ironrest.cyclic.app/chamadosti-projeto02/${userID}`
       );
       navigate("/");
       toast.success("Chamado deletado com sucesso!");
@@ -63,7 +63,7 @@ function DetailPage() {
       delete clone._id;
 
       await axios.put(
-        `https://ironrest.herokuapp.com/91chamadosti/${userID}`,
+        `https://ironrest.cyclic.app/chamadosti-projeto02/${userID}`,
         clone
       );
 
