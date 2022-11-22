@@ -3,6 +3,7 @@ import { useEffect,useState } from "react"
 import axios from "axios";
 import ModalCreateUser from "../components/ModalCreateUser";
 import { Link } from "react-router-dom";
+import BreadcrumbEx from "../components/MigalhadePao";
 
 
 function HomePage() {
@@ -31,7 +32,8 @@ function HomePage() {
 
     return (
       <div>
-        <h1>HomePage</h1>
+      <BreadcrumbEx/>
+        <h1>Controle de Chamados</h1>
 
         <Container>
           <FloatingLabel

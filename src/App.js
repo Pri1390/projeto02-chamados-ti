@@ -13,12 +13,12 @@ import {Routes, Route} from "react-router-dom"
 function App() {
   return (
     <div className="App">
-    <Toaster/>
-    <NavBar/>
+    <Toaster/> 
+     <NavBar/>
       
     <Routes>
       <Route path="/" element={<LoginPage/>} />
-      <Route path="/" element={<HomePage/>}/>
+      <Route path="/homepage" element={<HomePage/>}/>
       <Route path="/user/:userID" element={<DetailPage />} />
       
     </Routes>

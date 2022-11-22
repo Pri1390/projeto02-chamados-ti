@@ -1,10 +1,8 @@
-import{useParams, useNavigate} from "react-router-dom"
-import{useEffect, useState} from "react"
-import axios from "axios"
-import toast from "react-hot-toast"
-import { Container, Card, Button, Col, Row, Form } from "react-bootstrap"
-
-
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Container, Card, Button, Col, Row, Form } from "react-bootstrap";
 
 function DetailPage() {
   const { userID } = useParams();
@@ -20,6 +18,7 @@ function DetailPage() {
     email: "",
     setor: "",
     solicitacao: "",
+    niveldeprioridade: "",
     obsSolicitacao: "",
   });
 
@@ -69,7 +68,7 @@ function DetailPage() {
 
       toast.success("Alterações salvas");
       setReload(!reload);
-      setShowEdit(false)
+      setShowEdit(false);
     } catch (error) {
       console.log(error);
       toast.error("Algo deu errado, Tente novamente.");
@@ -77,7 +76,7 @@ function DetailPage() {
   }
 
   console.log(user);
-
+  console.log(form);
   return (
     <Container className="my-4">
       {/* Card User */}
@@ -104,6 +103,9 @@ function DetailPage() {
               <Col>
                 <Card.Title>Tipo de Solicitação:</Card.Title>
                 <Card.Text>{user.solicitacao}</Card.Text>
+
+                <Card.Title>Nível de Prioridade:</Card.Title>
+                <Card.Text>{user.niveldeprioridade}</Card.Text>
 
                 <Card.Title>Detalhes da Solicitação:</Card.Title>
                 <Card.Text>{user.obsSolicitacao}</Card.Text>
@@ -201,11 +203,14 @@ function DetailPage() {
                 <Col>
                   <Form.Group>
                     <Form.Label>Tipo de Solicitação</Form.Label>
-                    <Form.Select name="solicitacao" onChange={handleChange}
-                     defaultValue={form.solicitacao}>
+                    <Form.Select
+                      name="solicitacao"
+                      onChange={handleChange}
+                      defaultValue={form.solicitacao}
+                    >
                       <option>Selecione uma opção</option>
                       <option value="Instalar Software">
-                        Instalar Software{" "} 
+                        Instalar Software{" "}
                       </option>
                       <option value="Configurar Software ">
                         Configurar Software{" "}
@@ -223,6 +228,39 @@ function DetailPage() {
                     </Form.Select>
                   </Form.Group>
                 </Col>
+              </Row>
+              <Row>
+                <Form.Label>Nível de Prioridade</Form.Label>
+                <Form onChange={handleChange} value={user.niveldeprioridade}>
+                  {["radio"].map((type) => (
+                    <div key={`inline-${type}`} className="mb-3">
+                      <Form.Check
+                        value="baixo"
+                        inline
+                        label="baixo"
+                        name="niveldeprioridade"
+                        type={type}
+                        id={`inline-${type}-1`}
+                      />
+                      <Form.Check
+                        value="médio"
+                        inline
+                        label="médio"
+                        name="niveldeprioridade"
+                        type={type}
+                        id={`inline-${type}-2`}
+                      />
+                      <Form.Check
+                        value="alto"
+                        inline
+                        label="alto"
+                        name="niveldeprioridade"
+                        type={type}
+                        id={`inline-${type}-3`}
+                      />
+                    </div>
+                  ))}
+                </Form>
               </Row>
               <Row>
                 <Col>

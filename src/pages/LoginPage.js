@@ -1,12 +1,18 @@
+import { Button, Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
-
-function InicioPage() {
-
-<div>
-    <h1>Controle de Chamados</h1>
-</div>
-return 
-
+// -------- COMPONENTE INICIAL --------
+// ao entrar na aplicação será mostrado este componente para o usuário iniciar sua navegação na página
+function LoginPage() {
+    return (
+        <Container style={{ height: '100vh' }} className="d-flex align-items-center justify-content-center">
+            <Button className="p-4" variant="dark" size="lg">
+                <Link className="nav-link" to="/HomePage">
+                   Entrar no sistema
+                </Link>
+            </Button>
+        </Container>
+    )
 }
 
-export default InicioPage;
+export default LoginPage
