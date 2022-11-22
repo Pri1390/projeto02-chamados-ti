@@ -28,7 +28,7 @@ function ModalCreateUser({ reload, setReload }) {
   async function handleSubmit (e){
     e.preventDefault()
     try{ 
-      await axios.post("https://ironrest.herokuapp.com/91chamadosti", form)
+      await axios.post("https://ironrest.cyclic.app/chamadosti-projeto02", form)
       handleClose() //fechando o modal
       //limpando o formulário
       setForm({

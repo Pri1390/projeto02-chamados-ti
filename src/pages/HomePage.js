@@ -14,7 +14,7 @@ function HomePage() {
     useEffect (() =>{
 
         async function fetchUsers(){
-            const response = await axios.get("https://ironrest.herokuapp.com/91chamadosti")
+            const response = await axios.get("https://ironrest.cyclic.app/chamadosti-projeto02")
             setUsers(response.data)
         }
 
