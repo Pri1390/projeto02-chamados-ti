@@ -21,7 +21,7 @@ function LoginPage() {
         </Row>
         <Row>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Acesso ao sistema</Form.Label>
+            <Form.Label className ="fw-bold">Acesso ao sistema</Form.Label>
             <Form.Control type="email" placeholder="Usuário" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">

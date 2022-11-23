@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Container, Card, Button, Col, Row, Form } from "react-bootstrap";
+import BreadcrumbEx from "../components/MigalhadePao";
+
 
 function DetailPage() {
   const { userID } = useParams();
@@ -47,7 +49,7 @@ function DetailPage() {
       await axios.delete(
         `https://ironrest.cyclic.app/chamadosti-projeto02/${userID}`
       );
-      navigate("/");
+      navigate("/HomePage");
       toast.success("Chamado deletado com sucesso!");
     } catch (error) {
       console.log(error);
@@ -78,7 +80,11 @@ function DetailPage() {
   console.log(user);
   console.log(form);
   return (
+
     <Container className="my-4">
+    <BreadcrumbEx />
+
+
       {/* Card User */}
       {showEdit === false && (
         <Card className="text-center" bg="light">

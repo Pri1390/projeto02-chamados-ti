@@ -3,11 +3,11 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 function BreadcrumbEx() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Tela de Login</Breadcrumb.Item>
       <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-        Library
+        Controle de Chamados
       </Breadcrumb.Item>
-      <Breadcrumb.Item active>Data</Breadcrumb.Item>
+    
     </Breadcrumb>
   );
 }
