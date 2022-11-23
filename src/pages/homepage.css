@@ -1,4 +1,4 @@
-.search {
+.search{
     width: 400px;
     font-size: small;
 
@@ -19,7 +19,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .ratioPrioridade{
     margin-right: 20px;
