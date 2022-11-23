@@ -10,8 +10,8 @@ function NavBar() {
             <img
               alt="logo de um computador"
               src="https://thumbs.dreamstime.com/b/repare-o-computador-logo-icon-design-125299305.jpg"
-              width="30"
-              height="30"
+              width="50"
+              height="50"
               className="d-inline-block align-top"
             />{" "}
             Chamados de TI

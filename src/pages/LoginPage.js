@@ -1,5 +1,5 @@
-import { Button, Container,Form,Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Button, Container, Form, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // -------- COMPONENTE INICIAL --------
 // ao entrar na aplicação será mostrado este componente para o usuário iniciar sua navegação na página
@@ -9,14 +9,14 @@ function LoginPage() {
       style={{ height: "90vh" }}
       className="d-flex align-items-center justify-content-center"
     >
-      <Form>
+      <Form className="d-flex align-items-center justify-content-center flex-column w-25 h-30">
         <Row>
           <img
             className="chamados-imagem"
             src="https://esales.com.br/wp-content/uploads/2019/11/quais-os-indicadores-para-otimizacao-de-atendimento-online.jpg"
             alt="imagem chamado ti"
-            width="500"
             height="300"
+            widht="300"
           />
         </Row>
         <Row>
@@ -41,4 +41,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage
+export default LoginPage;
