@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Button, Modal, Row, Col, Form } from "react-bootstrap";
 import toast from "react-hot-toast";
-
+import "../pages/homepage.css";
 
 function ModalCreateUser({ reload, setReload }) {
   const [show, setShow] = useState(false);
@@ -93,7 +93,7 @@ function ModalCreateUser({ reload, setReload }) {
             </Row>
             <Row>
               <Col>
-                <Form.Group>
+                <Form.Group className="mb-3">
                   <Form.Label>Número de Telefone</Form.Label>
                   <Form.Control
                     type="text"
@@ -153,44 +153,47 @@ function ModalCreateUser({ reload, setReload }) {
                     <option value="Configurar Rede">Configurar rede</option>
                   </Form.Select>
                 </Form.Group>
-                <Col>
-                  <Form.Label>Nivel de Prioridade</Form.Label>
-                  <Form onChange={handleChange}>
-                    {["radio"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          value="baixo"
-                          inline
-                          label="baixo"
-                          name="niveldeprioridade"
-                          type={type}
-                          id={`inline-${type}-1`}
-                        />
-                        <Form.Check
-                          value="médio"
-                          inline
-                          label="médio"
-                          name="niveldeprioridade"
-                          type={type}
-                          id={`inline-${type}-2`}
-                        />
-                        <Form.Check
-                          value="alto"
-                          inline
-                          label="alto"
-                          name="niveldeprioridade"
-                          type={type}
-                          id={`inline-${type}-3`}
-                        />
-                      </div>
-                    ))}
-                  </Form>
-                </Col>
+                <Col></Col>
               </Col>
             </Row>
             <Row>
               <Col>
                 <Form.Group>
+                  <div className="prioridade">
+                    <Form.Label className="ratioPrioridade">
+                      Nivel de Prioridade
+                    </Form.Label>
+                    <Form onChange={handleChange}>
+                      {["radio"].map((type) => (
+                        <div key={`inline-${type}`}>
+                          <Form.Check
+                            value="Baixo"
+                            inline
+                            label="baixo"
+                            name="niveldeprioridade"
+                            type={type}
+                            id={`inline-${type}-1`}
+                          />
+                          <Form.Check
+                            value="Médio"
+                            inline
+                            label="médio"
+                            name="niveldeprioridade"
+                            type={type}
+                            id={`inline-${type}-2`}
+                          />
+                          <Form.Check
+                            value="Alto"
+                            inline
+                            label="alto"
+                            name="niveldeprioridade"
+                            type={type}
+                            id={`inline-${type}-3`}
+                          />
+                        </div>
+                      ))}
+                    </Form>
+                  </div>
                   <Form.Label>
                     Por favor, informe detalhes da solicitação:
                   </Form.Label>

@@ -1,13 +1,17 @@
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Breadcrumb from "react-bootstrap/Breadcrumb";
+import { Link } from "react-router-dom";
 
 function BreadcrumbEx() {
   return (
     <Breadcrumb>
-      <Breadcrumb.Item href="#"> Tela de Login</Breadcrumb.Item>
-      <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-        Controle de Chamados
+      <Breadcrumb.Item>
+        {" "}
+        <Link to="/">Tela de Login</Link>{" "}
       </Breadcrumb.Item>
-    
+      <Breadcrumb.Item>
+        {" "}
+        <Link to="/homepage"> Controle de Chamados</Link>
+      </Breadcrumb.Item>
     </Breadcrumb>
   );
 }
