@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { Container, Card, Button, Col, Row, Form } from "react-bootstrap";
 import BreadcrumbEx from "../components/MigalhadePao";
 
-
 function DetailPage() {
   const { userID } = useParams();
   const navigate = useNavigate();
@@ -80,10 +79,8 @@ function DetailPage() {
   console.log(user);
   console.log(form);
   return (
-
     <Container className="my-4">
-    <BreadcrumbEx />
-
+      <BreadcrumbEx />
 
       {/* Card User */}
       {showEdit === false && (
@@ -237,11 +234,23 @@ function DetailPage() {
               </Row>
               <Row>
                 <Form.Label>Nível de Prioridade</Form.Label>
+                <h3
+                  style={
+                    form.niveldeprioridade === "Alto"
+                      ? { color: "red" }
+                      : form.niveldeprioridade === "Baixo"
+                      ? { color: "blue" }
+                      : { color: "orange" }
+                  }
+                >
+                  {form.niveldeprioridade}
+                </h3>
+
                 <Form onChange={handleChange} value={user.niveldeprioridade}>
                   {["radio"].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
                       <Form.Check
-                        value="baixo"
+                        value="Baixo"
                         inline
                         label="baixo"
                         name="niveldeprioridade"
@@ -249,7 +258,7 @@ function DetailPage() {
                         id={`inline-${type}-1`}
                       />
                       <Form.Check
-                        value="médio"
+                        value="Médio"
                         inline
                         label="médio"
                         name="niveldeprioridade"
@@ -257,7 +266,7 @@ function DetailPage() {
                         id={`inline-${type}-2`}
                       />
                       <Form.Check
-                        value="alto"
+                        value="Alto"
                         inline
                         label="alto"
                         name="niveldeprioridade"
